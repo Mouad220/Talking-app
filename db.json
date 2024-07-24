@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "00c0",
+      "fullName": "MOUAd",
+      "email": "mouad.mai220@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "3cc9",
+      "fullName": "MOUAd",
+      "email": "mou3ath220@hotmail.com",
+      "password": "123"
+    },
+    {
+      "id": "ac81",
+      "fullName": "MOUADi",
+      "email": "mouad.mai220@gmail.comk",
+      "password": "5555"
+    }
+  ]
+}

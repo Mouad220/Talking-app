@@ -1,0 +1,29 @@
+
+    <div class="header">
+      <div class="header-content">
+      <h1><span>NEWS</span><br><span>Your Location</span></h1>
+      <div class="btn-container">
+        <button class="btn-dark">Request callback<img src="assets/images/phone.png" alt=""></button>
+        <button class="btn-light">Know more <img src="assets/images/arrow-black.png" alt=""></button>
+      </div>
+      <p>Write anything that you want here</p>
+    </div>
+      <img src="assets/images/user.png" alt="" class="user-img">
+    </div>
+    
+    <script>
+      let navbar = document.querySelector('nav');
+      let menuLinks = document.getElementById("menu-links");
+    
+      function toggleMenu() {
+        menuLinks.classList.toggle('show-menu');
+      }
+    
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) {
+          navbar.style.background = '#eefff9';
+        } else {
+          navbar.style.background = 'transparent';
+        }
+      });
+    </script>

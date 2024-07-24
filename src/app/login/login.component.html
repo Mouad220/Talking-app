@@ -1,0 +1,28 @@
+<section class="body-font text-center full-page flex  items-center center-container">
+   <form [formGroup]="loginForm">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="box container px-5 py-24 mx-auto p-2 w-1/2">
+        <h2 class=" text-gray-900 text-lg font-medium title-font mb-5">Login</h2>
+       
+       <div class=" field relative mb-4">
+          <span for="email" >Email</span>
+          <input  type="text" pInputText formControlName="email" placeholder="Type your email b****" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+       <small *ngIf="email.invalid && (email.dirty || email.touched)" class="block p-error">
+            <div *ngIf="email.errors?.['required']">Email is required</div>
+            <div *ngIf="email.errors?.['email']">Email should be valid</div>
+          </small>
+        </div>
+        <div class="relative mb-4">
+          <label for="password" >Password</label>
+          <input type="text" pInputText formControlName="password" placeholder="Type your Password b****"  name="password" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          <small *ngIf="password.invalid && (password?.dirty || password?.touched)" class="block p-error">
+            <div *ngIf="password.errors?.['required']">Password is required</div>
+          </small>
+        </div>
+          <button class="button" [disabled]="loginForm.invalid">Login</button>
+       <p class="text-xs text-gray-500 mt-3"> Not Member? <a class="routerLinkSingup" routerLink="/signup" >SignIn</a></p>
+      </div>
+    </div>
+  </form>
+
+  </section>

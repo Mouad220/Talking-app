@@ -1,0 +1,67 @@
+<section class="body-font text-center full-page flex justify-center items-center">
+  <form [formGroup]="signupForm" (ngSubmit)="submitDetails()">
+ 
+  <div class="container px-5 py-24 mx-auto">
+
+    <div class="box container px-5 py-24 mx-auto p-2 w-1/2">
+      <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Create Your Talking Account</h2>
+
+      <div class="relative mb-4">
+      <label for="fullName"
+             class="leading-7 text-sm text-gray-600">Full Name</label>
+      <input type="fullName" pInputText formControlName="fullName" placeholder="Type your full Name b****" name="fullName" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+      <small *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="block p-error">
+        <div *ngIf="fullName.errors?.['required']"> Name is required</div>
+        <div *ngIf="fullName.errors?.['pattern']">Enter a valid Name</div>
+      </small>      
+        </div>
+
+      <div class="relative mb-4">
+        <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+        <input type="email"
+               pInputText formControlName="email" placeholder="Type your email b****" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+        <small *ngIf="email.invalid && (email.dirty || email.touched)" class="block p-error">
+          <div *ngIf="email.errors?.['required']">Email is required</div>
+          <div *ngIf="email.errors?.['email']">Email should be valid</div>
+        </small>         </div>
+
+        <div class="relative mb-4">
+          <label for="password" 
+                 class="leading-7 text-sm text-gray-600">Password</label>
+          <input type="password" pInputText formControlName="password" placeholder="Type your Password b****"  name="password"   required={true}   autoComplete="true"
+
+          class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          <small *ngIf="password.invalid && (password.dirty || password?.touched)" class="block p-error">
+            <div *ngIf="password.errors?.['required']">Password is required</div>
+          </small>      
+        </div>
+        
+        <div class="relative mb-4">
+          <label for="confirmPassword" 
+                 class="leading-7 text-sm text-gray-600">Confirm  Password</label>
+          <input type="password" pInputText formControlName="confirmPassword" placeholder="Confirm Password b****"  name="confirmPassword"                           autoComplete="true"
+          required={true} class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          <small *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword?.touched)" class="block p-error">
+            <div *ngIf="confirmPassword.errors?.['required']">Confirm the Password </div>
+          </small>    
+          <small
+          class="block p-error"
+          *ngIf="signupForm.errors?.['passwordMismatch'] && confirmPassword.valid && password.valid"
+        >
+          Password should match
+        </small>   
+         
+   
+       </div>
+   
+       <p-toast>
+      </p-toast>
+
+      <button class="button" [disabled]="signupForm.invalid" type="submit">Login</button>
+      <p class="text-xs text-gray-500 mt-3">Already a Member? <a class="routerLinkSingup" routerLink="/Login" >Login</a></p>
+    </div>
+  </div>
+
+</form>
+</section>
+
